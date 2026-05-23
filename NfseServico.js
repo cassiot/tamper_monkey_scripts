@@ -43,6 +43,7 @@ async function fillForm(){
     // selectCodigoComplementar.dispatchEvent(keyDownEventEnter);
     selectCodigoComplementar.selectedIndex = 0;
     selectCodigoComplementar.dispatchEvent(changeEvent);
+    selectCodigoComplementar.dispatchEvent(new Event("chosen:updated", { bubbles: true }));
 
     await sleep(500);
 
@@ -63,10 +64,12 @@ async function fillForm(){
     const selectModoPrestacao = document.getElementById('ComercioExterior_ModoPrestacao');
     selectModoPrestacao.selectedIndex = 1; //Transfonteiriço
     selectModoPrestacao.dispatchEvent(changeEvent);
+    selectModoPrestacao.dispatchEvent(new Event("chosen:updated", { bubbles: true }));
 
     const selectVinculoPrestacao = document.getElementById('ComercioExterior_VinculoPrestacao');
     selectVinculoPrestacao.value = 0; //Sem vínculo com o tomador/ Prestador
     selectVinculoPrestacao.dispatchEvent(changeEvent);
+    selectVinculoPrestacao.dispatchEvent(new Event("chosen:updated", { bubbles: true }));
 
     const inputMoeda = document.getElementsByName('ComercioExterior.TipoMoeda')[0];
     inputMoeda.value = 220;
@@ -74,14 +77,17 @@ async function fillForm(){
     const selectApoioPrestador = document.getElementById('ComercioExterior_MecanismoApoioPrestador');
     selectApoioPrestador.value = 1; //Nenhum
     selectApoioPrestador.dispatchEvent(changeEvent);
+    selectApoioPrestador.dispatchEvent(new Event("chosen:updated", { bubbles: true }));
 
     const selectVinculoTomador = document.getElementById('ComercioExterior_MecanismoApoioTomador');
     selectVinculoTomador.value = 1; //Nenhum
     selectVinculoTomador.dispatchEvent(changeEvent);
+    selectVinculoTomador.dispatchEvent(new Event("chosen:updated", { bubbles: true }));
 
     const selectMovimentacaoBens = document.getElementById('ComercioExterior_MovimentacaoTempBens');
     selectMovimentacaoBens.value = 1; //Não
     selectMovimentacaoBens.dispatchEvent(changeEvent);
+    selectMovimentacaoBens.dispatchEvent(new Event("chosen:updated", { bubbles: true }));
 
     const optionCompartilharMDIC = document.getElementsByName('ComercioExterior.CompartilharComMDIC')[1];
     optionCompartilharMDIC.click();
