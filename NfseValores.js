@@ -14,7 +14,12 @@
     const selectSituacaoTributaria = document.getElementById('TributacaoFederal_PISCofins_SituacaoTributaria');
     selectSituacaoTributaria.selectedIndex = 1;
     selectSituacaoTributaria.dispatchEvent(changeEvent);
+    selectSituacaoTributaria.dispatchEvent(new Event("chosen:updated", { bubbles: true }));
+
+    const optionNaoISSQNHaRetencao = document.getElementById('ISSQN_HaRetencao');
+    optionNaoISSQNHaRetencao.click();
 
     const selectTipoRetencao = document.getElementById('TributacaoFederal_PISCofins_TipoRetencao');
     selectTipoRetencao.selectedIndex = 1;
     selectTipoRetencao.dispatchEvent(changeEvent);
+    selectTipoRetencao.dispatchEvent(new Event("chosen:updated", { bubbles: true }));
