@@ -18,6 +18,7 @@
     const selectRegimeApuracao = document.getElementById('SimplesNacional_RegimeApuracaoTributosSN');
     selectRegimeApuracao.selectedIndex = 1;
     selectRegimeApuracao.dispatchEvent(new Event("change", { bubbles: true }));
+    selectRegimeApuracao.dispatchEvent(new Event("chosen:updated", { bubbles: true }));
 
     //TOMADOR DO SERVIÇO
     const radioTomadorExterior = document.getElementsByName('Tomador.LocalDomicilio');
@@ -53,4 +54,5 @@
     const selectTomadorPais = document.getElementById('Tomador_EnderecoExterior_CodigoPais');
     selectTomadorPais.value = 'US';
     selectTomadorPais.dispatchEvent(new Event("change", { bubbles: true }));
+    selectTomadorPais.dispatchEvent(new Event("chosen:updated", { bubbles: true }));
 })();
